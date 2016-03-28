@@ -6,13 +6,25 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+        function getEmails(messages){
+      		for(var i = 0; i < messages.length; i++){
+	            console.log(messages[i]);
+
+	         	document.write("<tr><td>"messsages[i].sender + " " + messages[i].subject + " " + messages[i].date + "</td></tr>");
+      		}
+      	}
+ 		getEmails(geemails);
+      
       };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			Build Me!
+			<h1>Gee Mail</h1>
+		</div>
+		<div class="left"></div>
+		<div class="right">
+			<h2>Content</h2>
 		</div>
 	</body>
 </html>
