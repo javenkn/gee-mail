@@ -3,36 +3,34 @@
 	position: relative;
 	width: 100%;
 	height: 60px;
-	background-color: #DFDFDF;
+}
+
+.email{
+	border: 1px solid black;
+	margin-bottom: 1px;
+}
+
+div.sender{
+	display: inline-block;
+	vertical-align: top;
+	float: left;
+	width: 150px;
+}
+
+div.subject{
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+div.date{
+	display: inline-block;
+	vertical-align: top;
+	float: right;
 }
 
 h1 {
 	font-family: Times;
-	text-align: center;
-	color: #EE5353;
-}
-
-.left{
-	position: relative;
-	float: left;
-	margin-top: 1px;
-	width: 20%;
-	height: 90%;
-	background-color: #DFDFDF;
-	margin-bottom: 10px;
-}
-
-.right{
-	position: relative;
-	float:right;
-	margin-top: 1px;
-	width: 79.9%;
-	height: 90%;
-	background-color: #DFDFDF;
-	margin-bottom: 10px;
-}
-
-h2 {
 	text-align: center;
 	color: #EE5353;
 }

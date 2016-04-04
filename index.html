@@ -6,25 +6,65 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        function getEmails(messages){
+
+        console.log(geemails);
+        function generateEmail(messages){
       		for(var i = 0; i < messages.length; i++){
 	            console.log(messages[i]);
+	            console.log(messages[i].sender);
+	            console.log(messages[i].subject);
+	            console.log(messages[i].date);
+	            console.log(messages[i].body);
 
-	         	document.write("<tr><td>"messsages[i].sender + " " + messages[i].subject + " " + messages[i].date + "</td></tr>");
+	            var emailElement = document.createElement('div');
+	            emailElement.className = "email";
+	            document.getElementById('main').appendChild(emailElement);
+
+	            var senderElement = document.createElement('div');
+	            senderElement.className = "sender";
+	            senderElement.innerHTML = messages[i].sender;
+	            emailElement.appendChild(senderElement);
+
+	            var subjectElement = document.createElement('div');
+	            subjectElement.className = "subject";
+	            subjectElement.innerHTML = messages[i].subject;
+	            emailElement.appendChild(subjectElement);
+
+	            var dateElement = document.createElement('div');
+	            dateElement.className = "date";
+	            dateElement.innerHTML = messages[i].date;
+	            emailElement.appendChild(dateElement);
+
+	            var bodyElement = document.createElement('div');
+	            bodyElement.className = "body";
+	            bodyElement.innerHTML = messages[i].body;
+	            emailElement.appendChild(bodyElement);
+	            bodyElement.style.display = "none";
       		}
       	}
- 		getEmails(geemails);
-      
+ 		generateEmail(geemails);
+
+ 		var emailElements = document.getElementsByClassName('email');
+
+		for (var i = 0; i<emailElements.length; i++){
+		  emailElements[i].addEventListener('click', showMessage);
+		}
+
+		function showMessage(){
+		  var msg = this.querySelectorAll('.body')[0];
+		  if(msg.style.display==='none'){
+		    msg.style.display = 'block';
+		  }else{
+		    msg.style.display = 'none';
+		  }
+		}
+
       };
     </script>
 	</head>
 	<body>
-		<div class="container" id="main">
+		<div id="main">
 			<h1>Gee Mail</h1>
-		</div>
-		<div class="left"></div>
-		<div class="right">
-			<h2>Content</h2>
 		</div>
 	</body>
 </html>
