@@ -6,7 +6,7 @@
 }
 
 #inbox{
-	position: fixed;
+	position: absolute;
 	float: left;
 }
 

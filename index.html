@@ -66,6 +66,50 @@
 		var emailInbox = document.getElementById("count");
 		emailInbox.innerHTML = geemails.length;
 
+		//set interval for new messages
+		setInterval(incomingEmails,7000);
+
+		function incomingEmails(){
+			var newEmail = getNewMessage();
+
+			//increase inbox count by 1
+			var count = emailInbox.innerHTML;
+			count++;
+			emailInbox.innerHTML = count;
+
+			//display the new emails
+			var emailElement = document.createElement('div');
+	        emailElement.className = "email";
+	        document.getElementById('main').appendChild(emailElement);
+
+	        var senderElement = document.createElement('div');
+	        senderElement.className = "sender";
+	        senderElement.innerHTML = newEmail.sender;
+            emailElement.appendChild(senderElement);
+
+	        var subjectElement = document.createElement('div');
+	        subjectElement.className = "subject";
+            subjectElement.innerHTML = newEmail.subject;
+            emailElement.appendChild(subjectElement);
+
+            var dateElement = document.createElement('div');
+            dateElement.className = "date";
+            dateElement.innerHTML = newEmail.date;
+            emailElement.appendChild(dateElement);
+
+            var bodyElement = document.createElement('div');
+            bodyElement.className = "body";
+            bodyElement.innerHTML = newEmail.body;
+            emailElement.appendChild(bodyElement);
+            bodyElement.style.display = "none";
+
+            var newEmailElements = document.getElementsByClassName('email');
+            for (var i = 0; i<emailElements.length; i++){
+		  		newEmailElements[i].addEventListener('click', showMessage);
+			}
+
+		}
+
 
       };
     </script>
