@@ -17,6 +17,10 @@
 	top: 50px;
 }
 
+.email:hover{
+	background-color: yellow;
+}
+
 div.sender{
 	display: inline-block;
 	vertical-align: top;

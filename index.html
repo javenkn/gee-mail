@@ -51,6 +51,7 @@
 
 		for (var i = 0; i<emailElements.length; i++){
 		  emailElements[i].addEventListener('click', showMessage);
+		  emailElements[i].addEventListener('click', messageRead);
 		}
 
 		function showMessage(){
@@ -62,6 +63,13 @@
 		  }
 		}
 
+		function messageRead(){
+			var read = document.getElementsByClassName('email');
+			for(var i = 0; i < read.length; i++){
+				this.style.backgroundColor = "#E0E0E0";
+			}
+		}
+
 		//get the inbox count
 		var emailInbox = document.getElementById("count");
 		emailInbox.innerHTML = geemails.length;
@@ -70,6 +78,7 @@
 		setInterval(incomingEmails,7000);
 
 		function incomingEmails(){
+			var mailElements = document.getElementsByClassName('email');
 			var newEmail = getNewMessage();
 
 			//increase inbox count by 1
@@ -80,7 +89,8 @@
 			//display the new emails
 			var emailElement = document.createElement('div');
 	        emailElement.className = "email";
-	        document.getElementById('main').appendChild(emailElement);
+	        //display new emails on top
+	        document.getElementById('main').insertBefore(emailElement,mailElements[0]);
 
 	        var senderElement = document.createElement('div');
 	        senderElement.className = "sender";
@@ -106,6 +116,7 @@
             var newEmailElements = document.getElementsByClassName('email');
             for (var i = 0; i<emailElements.length; i++){
 		  		newEmailElements[i].addEventListener('click', showMessage);
+		  		newEmailElements[i].addEventListener('click', messageRead);
 			}
 
 		}
