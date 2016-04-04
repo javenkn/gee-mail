@@ -7,7 +7,8 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-        console.log(geemails);
+
+        //display the email messages
         function generateEmail(messages){
       		for(var i = 0; i < messages.length; i++){
 	            console.log(messages[i]);
@@ -44,6 +45,8 @@
       	}
  		generateEmail(geemails);
 
+
+ 		//toggle (show/hide) body of email by clicking
  		var emailElements = document.getElementsByClassName('email');
 
 		for (var i = 0; i<emailElements.length; i++){
@@ -59,12 +62,21 @@
 		  }
 		}
 
+		//get the inbox count
+		var emailInbox = document.getElementById("count");
+		emailInbox.innerHTML = geemails.length;
+
+
       };
     </script>
 	</head>
 	<body>
 		<div id="main">
 			<h1>Gee Mail</h1>
+		</div>
+		<div id="inbox">
+			<h4>Inbox:</h4>
+			<span><h4 id="count"></h4></span>
 		</div>
 	</body>
 </html>

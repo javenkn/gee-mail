@@ -5,9 +5,16 @@
 	height: 60px;
 }
 
+#inbox{
+	position: fixed;
+	float: left;
+}
+
 .email{
 	border: 1px solid black;
 	margin-bottom: 1px;
+	position: relative;
+	top: 50px;
 }
 
 div.sender{
@@ -32,5 +39,15 @@ div.date{
 h1 {
 	font-family: Times;
 	text-align: center;
+	color: #EE5353;
+}
+
+h4 {
+	display: inline-block;
+	vertical-align: top;
+}
+
+span{
+	position: relative;
 	color: #EE5353;
 }
